@@ -41,8 +41,23 @@ echo "</select>\n";
 echo "</form>";
 echo "</center>";
 
+//7/5/12: Recorro la tabla para calcular el total de amonestaciones, citaciones y sanciones
+
+$result=mysql_query($sql);
+$ta=0;
+$tc=0;
+$ts=0;
+while($row=mysql_fetch_array($result))
+{
+	$ta=$ta+calcular_num_amonestaciones($row["Id"]);
+	$tc=$tc+calcular_num_citaciones($row["Id"]);
+	$ts=$ts+calcular_num_sanciones($row["Id"]);
+}
+
+
 
 echo "<center><h2>".$uni."</h2></center>";
+echo "<center><h4>Total:".$ta."/".$tc."/".$ts."</h4></center>";
 echo "<center><table id=\"datos\" border=\"1\">";
 echo "<tr>";
 	echo "<td>N</td>";
