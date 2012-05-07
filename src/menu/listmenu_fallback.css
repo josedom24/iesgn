@@ -1,0 +1,7 @@
+.menulist li:hover>ul {
+ display: block;
+}
+
+.menulisth li:hover>ul {
+ display: block;
+}

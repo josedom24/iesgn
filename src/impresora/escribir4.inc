@@ -1,0 +1,23 @@
+<?
+while($row=mysql_fetch_array($result))
+	{
+		$nombre=$row["Nombre"];
+		$unidad=$row["Unidad"];
+		if($row["Tipo"]=="a")
+		{
+			fputs($fic,utf8_decode("Amonestación").";"); 
+			fputs($fic,utf8_decode(cambiaf_a_normal($row["Fecha"])).";"); 
+			fputs($fic,";"); 
+			fputs($fic,";"); 
+			fputs($fic,utf8_decode($row["Comentario"])."\n"); 
+		}
+		else
+		{
+		fputs($fic,utf8_decode("Sanción").";"); 
+		fputs($fic,utf8_decode(cambiaf_a_normal($row["Fecha"])).";"); 
+		fputs($fic,utf8_decode(cambiaf_a_normal($row["Fecha_fin"])).";"); 
+		fputs($fic,utf8_decode($row["Sancion"]).";"); 
+		fputs($fic,utf8_decode($row["Comentario"])."\n"); 
+		}
+	}
+	?>
