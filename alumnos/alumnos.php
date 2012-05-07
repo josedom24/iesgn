@@ -98,6 +98,9 @@ while($row=mysql_fetch_array($result))
 	$cont++;
 }
 echo "</table></center>";
+echo "<br/>";
+echo imagen("add_user.png")."<a href=\"addalumno.php?uni=".$uni."\">Insertar nuevo alumno</a>";
+
 include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/footer.inc");
 ?>
 

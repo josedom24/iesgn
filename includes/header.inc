@@ -1,7 +1,7 @@
 <?session_start();
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/config.inc");
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/verify.inc");
+require_once ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/config.inc");
+require_once ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
+require_once ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/verify.inc");
 if(!$_SESSION["usuario"] && $_COOKIE["iesgn"])
 {	
 print "<meta http-equiv=refresh content=0;URL=".url()."login.php>";

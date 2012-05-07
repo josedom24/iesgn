@@ -52,8 +52,8 @@ permisos("alumnos","E",1);
 	}
 	else
 	{
-			$valor_nom=$row['nom'];
-			$valor_dni=$row['dni'];
+			$valor_nom=$_POST['nom'];
+			$valor_dni=$_POST['dni'];
 			$valor_unidad=$_POST['uni'];
 			$valor_usuario_modificar=$_POST["usuario_a_modificar"];
 			$valor_dir=$_POST["dir"];
