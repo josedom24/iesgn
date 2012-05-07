@@ -1,4 +1,6 @@
 #Configuración BD
 config.inc
 
-#Copias de seguirdad *.*~
+#Copias de seguirdad 
+*.bak
+*.*~
