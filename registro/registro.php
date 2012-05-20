@@ -38,7 +38,9 @@ echo "<td>";
 ComboCurso($vc);
 echo "</td>";
 if($tipo=="e") echo "<td>Procedencia:</td><td>"; else echo "<td>Destino:</td><td>";
-Combo("Procedencia","proc");
+
+Combo("Procedencia","proc",0,1,"",0,"","Procedencia");
+#Combo("Procedencia","proc");
 echo "</td></tr><tr>";
 echo "<td>Fecha Incial:</td>";
 echo "<td><input type=\"text\" size=\"10\" name=\"fi\" value=\"".$_POST["fi"]."\">";
@@ -47,10 +49,12 @@ echo "<td>Fecha Final:</td>";
 echo "<td><input type=\"text\" size=\"10\"  name=\"ff\" value=\"".$_POST["ff"]."\">";
 echo "<a href=\"javascript:cal2.popup();\">".imagen("cal.gif")."</a></td></tr><tr>";
 if($tipo=="e") echo "<td>Remitente:</td><td>"; else echo "<td>Destinatario:</td><td>";
-Combo("Remitente","remi");
+
+Combo("Remitente","remi",0,1,"",0,"","Remitente");
+#Combo("Remitente","remi");
 echo "</td>";
 echo "<td>Documento:</td><td>";
-Combo("ClaseDocumento","clas");
+Combo("ClaseDocumento","clas",0,1,"",0,"","ClaseDocumento");
 echo "</td></tr></table>";
 echo "<table><tr><td>Contenido:</td><td><input type=\"text\" size=\"70\" name=\"cont\" value=\"".$_POST["cont"]."\"></td></tr></table>";
 
