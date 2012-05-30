@@ -4,6 +4,7 @@ $opciones=array("Alumnos"=>array(array(
 																		array("alumnos/resumen.php\">Resumen de amonestaciones","partes"),
 																		array("alumnos/resumen_cit.php\">Resumen de citaciones","partes"),
 																		array("alumnos/resumen_san.php\">Resumen de sanciones","partes"),
+																		array("alumnos/resumen_prof.php\">Resumen por profesor","partes"),
 																		array("alumnos/faltas.php\">Control de Faltas","faltas"),
 																		array("alumnos/compdiv.php\">Comp-Div.","alumnos"),
 																		array("libros/libros.php\">Libros de Texto","libros"),
