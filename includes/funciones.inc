@@ -457,6 +457,26 @@ while($row=mysql_fetch_array($result))
 }
 echo "</select>\n";
 }
+
+function ComboProfe()
+{
+$sql="select * from Profesores order by Apellidos";
+
+$result=mysql_query($sql);
+
+
+echo "<select name=\"profe\" size=\"0\">";
+echo "<option selected value=\"-1\"></option>";
+
+while($row=mysql_fetch_array($result))
+{
+		
+		echo "<option value=\"".$row[0]."\">".$row[1]." ".$row[2]."</option>\n";
+}
+echo "</select>\n";
+}
+
+
 function curso($f=0)
 {
 	if($f==0)
