@@ -216,17 +216,17 @@ CREATE TABLE `LibrosAlumnos` (
 --
 
 DROP TABLE IF EXISTS `Partes`;
-CREATE TABLE `Partes` (
-  `Id` int(11) NOT NULL auto_increment,
+CREATE TABLE IF NOT EXISTS `Partes` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Ida` int(11) NOT NULL,
-  `Tipo` varchar(1) collate utf8_spanish2_ci NOT NULL,
+  `Tipo` varchar(1) COLLATE utf8_spanish2_ci NOT NULL,
   `Fecha` date NOT NULL,
   `Fecha_fin` date NOT NULL,
-  `Sancion` varchar(100) collate utf8_spanish2_ci NOT NULL,
-  `Comentario` varchar(400) collate utf8_spanish2_ci default NULL,
-  PRIMARY KEY  (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1572 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
+  `Sancion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Comentario` varchar(400) COLLATE utf8_spanish2_ci DEFAULT NULL,
+  `Id_prof` int(11) NOT NULL DEFAULT '-1',
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci AUTO_INCREMENT=1574 ;
 
 --
 -- Table structure for table `Perfil`
