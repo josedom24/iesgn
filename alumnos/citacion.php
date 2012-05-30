@@ -20,7 +20,7 @@ include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
 		
 		
 		
-			$sql="insert into Partes (Ida,Tipo,Fecha,Comentario) values (".$_POST["id"].",'c','".cambiaf_a_mysql($_POST["fecha"])."','".$_POST["comentario"]."')";	
+			$sql="insert into Partes (Ida,Tipo,Fecha,Comentario,Id_prof) values (".$_POST["id"].",'c','".cambiaf_a_mysql($_POST["fecha"])."','".$_POST["comentario"]."',".$_POST["profe"].")";	
 			mysql_query($sql) or die("Error en SQL:".$sql."<br>".mysql_error($bd));	
 			header("Location:alumnos.php?uni=".$_POST["uni"]);
 			die("");
@@ -64,7 +64,10 @@ if($_GET) $ti=$_GET["tipo"]; else $ti=$_POST["tipo"];
   			
 		echo "<br>Comentario:<br>";
 		echo "<textarea name =\"comentario\" rows=\"8\" cols=\"50\">";
-		echo "</textarea><br><br>";?>
+		echo "</textarea><br><br>";
+		echo "Porfesor:<br/>";
+                ComboProfe();          
+		?>
 		<input type="submit" name="respuesta" value="Aceptar">
 		<input type="submit" name="respuesta" value="Volver">
 		<?echo "</form>";
