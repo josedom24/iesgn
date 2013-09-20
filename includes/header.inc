@@ -14,19 +14,19 @@ die("");
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>IES Gonzalo Nazareno</title>
-	<script language="JavaScript" src="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/javascript.js"></script>
-	<script language="JavaScript" src="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/calendar1.js"></script>
-	 <script language="JavaScript" src="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/fsmenu.js"></script>
-	<link href="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/style.css" rel="stylesheet" type="text/css" />
+	<script language="JavaScript" src="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/javascript.js"></script>
+	<script language="JavaScript" src="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/calendar1.js"></script>
+	 <script language="JavaScript" src="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/fsmenu.js"></script>
+	<link href="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/style.css" rel="stylesheet" type="text/css" />
  	<link rel="stylesheet" type="text/css" id="listmenu-v"
-  href="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_v.css" title="Vertical 'Earth'" />
+  href="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_v.css" title="Vertical 'Earth'" />
  <link rel="stylesheet" type="text/css" id="listmenu-h"
-  href="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_h.css" title="Horizontal 'Earth'" />
+  href="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_h.css" title="Horizontal 'Earth'" />
 	
-	<link rel="stylesheet" type="text/css" id="fsmenu-fallback" href="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_fallback.css" />
+	<link rel="stylesheet" type="text/css" id="fsmenu-fallback" href="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/listmenu_fallback.css" />
 
 
- <link rel="stylesheet" type="text/css" href="http://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/divmenu.css" />
+ <link rel="stylesheet" type="text/css" href="https://<?echo $_SERVER['SERVER_NAME']?>/iesgn/includes/divmenu.css" />
 	
 
 </head>

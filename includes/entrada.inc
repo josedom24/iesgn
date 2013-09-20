@@ -12,6 +12,7 @@ if(!$_SESSION["usuario"])
 	<br><br>
 	<input type="checkbox" name="recordar">Recuerda usuario<br><br>
 	<input type="submit" value="Entrar">
+	<? echo $_SERVER['REMOTE_ADDR']?>
 	<br>
 	</form>
 <?

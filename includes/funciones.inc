@@ -332,7 +332,7 @@ function path()
 }
 function url()
 {
-		return("http://".$_SERVER['SERVER_NAME']."/iesgn/");
+		return("https://".$_SERVER['SERVER_NAME']."/iesgn/");
 }
 function imagen($img)
 {
