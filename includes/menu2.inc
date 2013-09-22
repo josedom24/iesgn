@@ -1,4 +1,7 @@
 <?
+$tipo="";
+$cg="";
+
 $opciones=array("resumen"=>array(array(
 																		array("impresora/list.php?l=1&f=".$fich."\" id=\"primero\">Imprimir","V"),
 																		array("impresora/carta.php?l=1&f=".$_POST["fecha"]."\">Cartas tipos","V"),

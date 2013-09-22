@@ -351,7 +351,8 @@ function fichrand()
 }
 function borrar ($fi)
 {
-	foreach (glob($fi) as $filename) {$result=mysql_query($sql);
+   global $sql;
+   foreach (glob($fi) as $filename) {$result=mysql_query($sql);
    //echo "$filename size " . filesize($filename) . "\n";
    unlink($filename);
 }

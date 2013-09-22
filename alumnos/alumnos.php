@@ -1,6 +1,6 @@
 <?include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/header.inc");
 permisos("alumnos");
-
+$uni="";
 if ($_GET) $uni=$_GET["uni"];
 if ($_POST) $uni=$_POST["uni"];
 $sql2="select Unidad from Alumnos group by Unidad";
