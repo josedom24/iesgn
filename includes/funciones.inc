@@ -489,6 +489,28 @@ echo "</select>\n";
 }
 
 
+function ComboPartes($tipo)
+{
+$sql="SELECT fecha FROM Partes WHERE tipo ='".$tipo."' GROUP BY fecha order by fecha desc";
+
+$result=mysql_query($sql);
+
+
+echo "<select name=\"fecha\" size=\"0\">";
+#echo "<option selected value=\"-1\"></option>";
+
+while($row=mysql_fetch_array($result))
+{
+		
+		echo "<option value=\"".cambiaf_a_normal($row[0])."\">".cambiaf_a_normal($row[0])."</option>\n";
+}
+echo "</select>\n";
+}
+
+
+
+
+
 function curso($f=0)
 {
 	if($f==0)

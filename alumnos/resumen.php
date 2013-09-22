@@ -41,7 +41,8 @@ if(!$_POST)
 {
 	echo "<form name=\"for\" action=\"resumen.php\" method=\"post\"  onsubmit=\"return validarF(this.fecha)\">";
 	echo "Elige fecha del resumen de amonestaciones:<br>";
-	echo "<input type=\"text\" size=\"10\" name=\"fecha\" value=\"".date("d/m/Y")."\">";
+	#echo "<input type=\"text\" size=\"10\" name=\"fecha\" value=\"".date("d/m/Y")."\">";
+	ComboPartes("a");
 	echo "<a href=\"javascript:cal1.popup();\">".imagen("cal.gif")."</a><br><br>";
 	echo "<input type=\"submit\" name=\"respuesta\" value=\"Aceptar\">";
 
