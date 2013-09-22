@@ -1,0 +1,69 @@
+
+
+/*******************************************************************************
+* Software: FPDF                                                               *
+* Version:  1.53                                                               *
+* Date:     2004-12-31                                                         *
+* Author:   Olivier PLATHEY                                                    *
+* License:  Freeware                                                           *
+*                                                                              *
+* You may use and modify this software as you wish.                            *
+*******************************************************************************/
+
+/*******************************************************************************
+* HTML2FPDF is a php script to read a HTML text and generate a PDF file.       *
+* Copyright (C) 2004-2005 Renato Coelho                                        *
+*	                          					       *
+* html2fpdf.php, htmltoolkit.php                                               *
+*******************************************************************************/
+
+CREDITS From HTML2FPDF:
+
+-Olivier Plathey for the fpdf.php class [http://www.fpdf.org]
+-Damon Kohler for the Flowing Block script [mailto:damonkohler@yahoo.com]
+-Clément Lavoillotte for HTML-oriented FPDF idea
+-Yamasoft for the gif.php class [http://www.yamasoft.com/]
+-Jérôme Fenal for the _parsegif() function
+-"VIETCOM" for the PDFTable code [http://www.freepgs.com/vietcom/tool/pdftable/] [mailto:vncommando@yahoo.com]
+-Yukihiro O. for the SetDash() function [mailto:yukihiro_o@infoseek.jp]
+-Ron Korving for the WordWrap() function
+-Michel Poulain for the DisplayPreferences() function
+-Patrick Benny for the MultiCellBlt() function idea [no longer in use]
+-Seb for the _SetTextRendering() and SetTextOutline() functions [mailto:captainseb@wanadoo.fr]
+-MorphSoft for the colornames list idea
+-W3SCHOOLS for HTML-related reference info [http://www.w3schools.com/]
+-Montfort Cultural Association - the site for which I generated this script [http://www.montfort.org.br] 
+
+
+/*******************************************************************************
+* Software: UFPDF, Unicode Free PDF generator                                  *
+* Version:  0.1                                                                *
+* Date:     2004-09-01                                                         *
+* Author:   Steven Wittens <steven@acko.net>                                   *
+* License:  GPL                                                                *
+*                                                                              *
+* UFPDF is a modification of FPDF to support Unicode through UTF-8.            *
+*******************************************************************************/
+
+/****************************************************************************
+* Software: FPDF_Protection                                                 *
+* Version:  1.02                                                            *
+* Date:     2005/05/08                                                      *
+* Author:   Klemen VODOPIVEC                                                *
+* License:  Freeware                                                        *
+*                                                                           *
+* You may use and modify this software as you wish as stated in original    *
+* FPDF package.                                                             *
+****************************************************************************/
+
+
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation;
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.
+[http://www.opensource.org/licenses/lgpl-license.php]
+

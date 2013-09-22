@@ -1,0 +1,176 @@
+===========================
+mPDF v1.3  (21/09/2008)
+===========================
+--------------
+Page Numbering
+--------------
+Program changes:
+$this->numPageNo() replaced by $this->page (all it did was return this->page anyway).
+fn. startPageNums() replaced with blank function
+fn. stopPageNums() - deleted
+fn. numPageNo() - deleted
+var $_numbering - deleted
+var $_numberingFooter - deleted
+var $_numPageNum - deleted
+
+NEW
+New: fn. AddPages() (as for AddPage but with type=NEXT-ODD or NEXT-EVEN see below)
+Edited: fn. AddPage() - new parameters added
+AddPage(orientation(NO),type="E|O", resetpagenum="1|0", pagenumstyle="I|i|A|a|1", suppress="on|off")
+New: fn. docPageNum() - returns the document page number (or '') based on...
+New : PageNumSubstitutions(array)
+New attributes:
+<pagebreak resetpagenum="1"	// resets document page numbering to 1 from the new page onwards
+<pagebreak suppress="on"	// turns on suppression of page numbering i.e. in headers and footers, {PAGENO} is replaced by ''
+					// ="0" turns suppression off
+<pagebreak pagenumstyle="I|i|A|a|1"	// (re)sets page number stle/type from the new page onwards - as for lists
+					// 1 - decimal; A/a - alpha (uppercase/lowercase); I/i - Roman (uppercase/lowercase)
+<pagebreak type="NEXT-ODD"	// always adds a page + another if required to make odd
+<pagebreak type="NEXT-EVEN"	// always adds a page + another if required to make even
+
+Edited: fn. TOC()	// sets the marker for a Table of Contents
+New parameters allow the pagenumbering details to be set
+NB the page-numbering details set are for the page which follows on after the TOC marker is inserted. The page-numbering for the actual ToC is set later, when the ToC is generated and inserted here
+new parameters as above for pagereak  resetpagenum="1|0", pagenumstyle="I|i|A|a|1", suppress="on|off"
+
+Can also be set by attribute in the <TOC>
+<TOC  resetpagenum="1" pagenumstyle="I|i|A|a|1", suppress="on|off"/>
+
+--------------------------------------------
+Changes to allow Rotated Text in table Cells
+--------------------------------------------
+Edited:
+fn. OpenTag()
+fn. _tableColumnWidth()
+fn. _tableHeight()
+fn. _tableWrite()
+fn. tableHeader()
+
+New custom style or attribute -- "text-rotate" -- can be set for either <tr> or <th|td>
+Allowed values: 45 - 90 (written as integers) - rotates text anticlockwise, and -90 (clockwise)
+Positive values less than 90 force cell to: vertical-align:bottom
+
+Limitations:
+Only allows single line of text;
+Font, font-size, and style are determined by those set for the cell, and cannot be changed;
+No changes in font (or any other in-line changes e.g. <sup>) are supported within the text
+
+Example: <tr style="text-rotate:90">...
+
+---------
+Bug fixes
+---------
+1) HTML footer containing table was triggering page break.
+Added $this->InHTMLFooter as flag to prevent page triggering in footers containing table
+Set in fn.writeHTMLFooters() -> in fn.tableWrite() stops the pageBreak being reset
+
+2) Crashing when libcurl not installed.
+Edited OpenTag() curl_init - added if (function_exists) to exclude crash when libcurl not installed
+
+3) Single cell with borders not showing the borders.
+e.g. <table><tr><td style=”border:1px solid #000000?>Hi</td></tr></table>
+Problem: mPDF overrides cell border properties with table border properties for external borders. $defaultCSS had CSS defined for table as '0px solid #000000'
+Quick fix - line 273 removed. A more complete fix will require reprogramming to distinguish between "border property not set" and border property set as "none".
+
+4) Empty textarea incorrectly handled (the following HTML code being output in the textarea)
+The html code for an empty textarea was incorrectly handled in htmltoolkit fn. AdjustHTML which has been edited
+
+
+===========================
+mPDF v1.2   (2008-05-01)
+===========================
+// Added v1.2 option to continue if invalid UTF-8 chars - used in function is_utf8()
+var $ignore_invalid_utf8 = false;
+
+Reading CSS in fn. ReadCSS() and applying in fn. MergeCSS() -
+	Edited to allow Tags, class and id with the same name to be distinct i.e. h5 {...}  .h5 {...}  #h5 {...}
+* mPDF 1.2 This version supports:  .class {...} / #id { .... }
+* ADDED p {...}  h1[-h6] {...}  a {...}  table {...}   thead {...}  th {...}  td {...}  hr {...}
+* body {...} sets default font and fontsize
+* It supports some cascaded CSS e.g. div.topic table.type1 td
+* Does not support non-block level e.g. a#hover { ... }
+
+Table: font-size, weight, style, family and color should all work
+TD/TH: font-size, weight, style, family and color should all work
+
+Added to htmltoolkit - fn.array_merge_recursive_unique()
+
+memory_opt Removed in mPDF v1.2 - not working properly
+
+fn. _begindoc() - changed to %PDF1.4 (was 1.3) as PDF version
+
+Write HTML Headers and Footers
+------------------------------
+fn. Close() - calls writeHTMLHeaders/Footers() before finishing doc
+fn. WriteHTML() - added parameter
+fn. _out - writes to outputbuffer when writing HTML footers/headers
+
+New
+fn. writeHTMLHeaders()
+fn. writeHTMLFooters()
+
+
+
+
+=======================
+mPDF v1.1  (2008-05-01)
+=======================
+
+Programming changes to increase efficiency
+------------------------------------------
+fn. WriteHTML() - added lines to combine substituted characters <tta> etc
+
+Memory Optimization added (script from FPDF site) - edited fn. _putpages() and fn. _endpage()
+
+fn. SetFont() edited to return val quicker if font already set (increase efficiency)
+
+new vars chrs and ords are used to store chr() and ord() - quicker than using functions
+
+fn.setMBencoding() - only call mb_internal_encoding if need to change
+
+Bugs
+----
+fn. SetDefaultFontSize() - edited to allow to override that set in defaultCSS
+
+fn. Output() - Added temporary(?) disablement of encryption in CJK as it doesn't work!
+
+fn. OpenTag() [LI] $this->blockjustfinished=false to prevents newline after first bullet of list within table
+
+Uses of mb_ereg_replace removed, and mb_split changed - requires regex_encoding (regex_encoding only used as UTF-8)
+
+fn. WriteHTML: attributes are trimmed with trim() to allow correct handling of e.g. class="bpmBook " 
+
+fn. printbuffer() and fn. openTag() to ensure
+ <div><div><p> outputs top margins/padding for both 1st and 2nd div
+ and </p></div></div> ...
+
+fn. SetFont() added line - bug fixing in CJK fonts
+
+CSS functionality
+-----------------
+Added special CSS 'thead-underline' (similar to topntail)
+
+var $thead_font_weight;	added (openTag) to enable setting of font-weight for <TH> cells
+
+Fixed table border inheritance: Table border inherits border="1" to cells, but not table style="border..."
+
+"page-break-inside: avoid" added (var keep_block_together) to allow a DIV or P to be kept on one page
+	- not compatible with table autosize or table rotate
+	- only works over maximum of 2 pages
+
+Enhancements
+------------
+Orphans in line justification: R. Bracket ) added to defined list of orphans
+
+allow_url_open
+--------------
+Following a change in the PHP ini config set on my website by my ISP, changes made to allow mPDF to work with allow_url_open=OFF.
+	- file_get_contents() changed to use libcurl (for CSS files)
+	- openTag('IMG') @fopen() and 3 functions _parsegif, _parseJPG, _parsePNG, edited to copy remote image files to local file to include images
+
+FlowChart
+---------
+Changes to enable mPDF work with a custom script producing Flowcharts:
+	- WriteHTML() second parameter=3 will allow HTML to be parsed but not output
+	- fn. Arrow() added
+	- TableWordWrap() added parameter to force array return
