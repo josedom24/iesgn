@@ -477,6 +477,17 @@ while($row=mysql_fetch_array($result))
 echo "</select>\n";
 }
 
+function ComboHoras()
+{
+$a=array("Primera","Segunda","Tercera","Recreo","Cuarta","Quinta","Sexta");
+echo "<select name=\"hora\" size=\"0\">";
+foreach ($a as $v)
+{
+	echo "<option value=\"".$v."\">".$v."</option>\n";
+}
+echo "</select>\n";
+}
+
 
 function curso($f=0)
 {
@@ -552,4 +563,5 @@ function CursoCompDiv($idc)
 	if($row=mysql_fetch_array($result)) return ($row["Curso"]);
 	
 }
+
 ?>
