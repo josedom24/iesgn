@@ -1,14 +1,14 @@
 <?
 $tipo="";
 $cg="";
-
 $opciones=array("resumen"=>array(array(
 																		array("impresora/list.php?l=1&f=".$fich."\" id=\"primero\">Imprimir","V"),
 																		array("impresora/carta.php?l=1&f=".$_POST["fecha"]."\">Cartas tipos","V"),
 																		array("editor/index.php?l=1\">Editar cartas","E")
 																	  ),"partes"),
 							"datossecretaria"=>array(array(
-																		array("registro/nuevodato.php?tipo=".$_GET["tipo"]."&t=".$_GET["t"]."&t1=".$_GET["t1"]."\" id=\"primero\">Nuevo dato","A"),
+																		array("registro/nuevodato.php?tipo=".$_GET["
+tipo"]."&t=".$_GET["t"]."&t1=".$_GET["t1"]."\" id=\"primero\">Nuevo dato","A"),
 																		array("registro/registro.php?tipo=e\">Entrada","V"),
 																		array("registro/registro.php?tipo=s\">Salida","V")
 																	  ),"secretaria"),
@@ -47,11 +47,11 @@ $opciones=array("resumen"=>array(array(
 																		array("profesores/listados.php\" id=\"primero\">Listados","V")
 																		
 																		),"profesores"),
-							"registro"=>array(array(
+							"secretaria"=>array(array(
 																		array("registro/nuevoregistro.php?tipo=".$tipo."\" id=\"primero\">Nuevo","A"),
 																		array("impresora/list.php?l=9&f=".$fich."\" >Imprimir","V"),
 						
-																	),"registro"),
+																	),"secretaria"),
 							"libros"=>array(array(
 									array("impresora/list.php?uni=".$uni."&cab=1&l=7&f=".$fich."\" id=\"primero\">Imprimir","V"),
         								array("impresora/carta.php?l=4&uni=".$uni."\">Revisión Alumnos","V"),

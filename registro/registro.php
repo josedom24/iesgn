@@ -22,7 +22,7 @@ $fich=escribir_fich("9",$sql);
 
 
 
-$menu="registro";
+$menu="secretaria";
 include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/menu2.inc");
 
 
