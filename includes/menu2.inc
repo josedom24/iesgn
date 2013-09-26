@@ -1,5 +1,5 @@
 <?
-$tipo="";
+global $tipo;
 $cg="";
 $opciones=array("resumen"=>array(array(
 																		array("impresora/list.php?l=1&f=".$fich."\" id=\"primero\">Imprimir","V"),
