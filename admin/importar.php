@@ -25,7 +25,7 @@
 			}
 				//$datos[0]=substr($datos[0],1);
 				$datos[sizeof($datos)-1]=substr($datos[sizeof($datos)-1],0,strlen($datos[sizeof($datos)-1])-3);
-				$sql="insert into Alumnos (Nombre,Dni,Direccion,CodPostal,Localidad,Fecha_nacimiento,Provincia,Unidad,Ap1tutor,Ap2tutor,Nomtutor) values (";
+				$sql="insert into Alumnos (Nombre,Dni,Direccion,CodPostal,Localidad,Fecha_nacimiento,Provincia,Unidad,Ap1tutor,Ap2tutor,Nomtutor,Telefono1,Telefono2) values (";
 				$sql2="";
 				foreach($datos as $d)		
 				{
@@ -52,7 +52,7 @@ include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/header.inc");
 permisos("admin");
 ?>
 <form ENCTYPE="multipart/form-data" action="importar.php" method="post">
-<br/><p>Fichero con texto plano con el siguiente formato: Nombre,DNI,Dirección, CodPostal, Localidad, Fecha_nacimiento,Provincia,Unidad,Ap1tutor,Ap2tutor,Nomtutor...</p><br/>
+<br/><p>Fichero con texto plano con el siguiente formato: Nombre,DNI,Dirección, CodPostal, Localidad, Fecha_nacimiento,Provincia,Unidad,Ap1tutor,Ap2tutor,Nomtutor, Teléfono1, Telefono2</p><br/>
 <br/><br/>A continuación quitar las cabeceras del fichero generado y codificar UTF-8.<br/>
 <br>Fichero:<br>
 <input type="file" name="archivo" size="55">
