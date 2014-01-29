@@ -1,9 +1,9 @@
 <?php
 session_start();
-include($_SERVER["DOCUMENT_ROOT"]."/iesgn/fpdf/mpdf1_3/mpdf.php");
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/config.inc");
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
-include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/verify.inc");
+include($_SERVER["DOCUMENT_ROOT"]."iesgn/fpdf/mpdf1_3/mpdf.php");
+include ($_SERVER["DOCUMENT_ROOT"]."iesgn/includes/config.inc");
+include ($_SERVER["DOCUMENT_ROOT"]."iesgn/includes/funciones.inc");
+include ($_SERVER["DOCUMENT_ROOT"]."iesgn/includes/verify.inc");
 permisos("General");
 
 $sql="select * from Cartas where Id=".$_GET["l"];
@@ -17,7 +17,6 @@ if($_GET["l"]==1 ) //Amonestaciones
 		$result2=mysql_query($sql) or die("error:".$sql);
 
 	$mpdf=new mPDF();
-
 $cont=1;
 	while($row2=mysql_fetch_array($result2))
 	{
@@ -28,7 +27,7 @@ $cont=1;
 		}
 	   
 		$html=cambia($row2[0],$row["Contenido"],"Alumnos");
-		$html=cambia($row2[12],$html,"Partes");
+		$html=cambia($row2[15],$html,"Partes");
 		$mpdf->WriteHTML($html,2);
 		
 		$cont++;
@@ -57,7 +56,7 @@ $cont=1;
 		}
 	   
 		$html=cambia($row2[0],$row["Contenido"],"Alumnos");
-		$html=cambia($row2[12],$html,"Partes");
+		$html=cambia($row2[15],$html,"Partes");
 		$mpdf->WriteHTML($html,2);
 		
 		$cont++;
