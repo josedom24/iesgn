@@ -57,6 +57,8 @@ while($row=mysql_fetch_array($result))
 
 
 echo "<center><h2>".$uni."</h2></center>";
+echo "<center><h3>Tutoría: ".tutoria($uni)["Nombre"]." ".tutoria($uni)["Apellidos"]."</h3></center>";
+
 echo "<center><h4>Total:".$ta."/".$tc."/".$ts."</h4></center>";
 echo "<center><table id=\"datos\" border=\"1\">";
 echo "<tr>";

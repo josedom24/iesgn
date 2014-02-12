@@ -586,4 +586,13 @@ function CursoCompDiv($idc)
 	
 }
 
+function tutoria($curso)
+{
+        $sql="select * from Profesores where Tutor='".$curso."'";
+        $result=mysql_query($sql);
+	if($row=mysql_fetch_array($result)) return ($row);
+
+}
+
+
 ?>
