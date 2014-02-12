@@ -104,14 +104,14 @@ permisos("profesores","E",1);
 	else
 		echo "<input type=\"text\" size=\"50\" name=\"nombre\" value=\"".$valor_nombre."\"\n";
 	echo "<br>\n";
-	echo  "Apellidos:<br>\n";
+	echo  "<br/>Apellidos:<br>\n";
 	if($error_nombre)
 		echo "<input type=\"text\" size=\"50\" name=\"apellidos\"> <font color=\"red\">Debes indicar el nombre.</font>\n";
 	else
 		echo "<input type=\"text\" size=\"50\" name=\"apellidos\" value=\"".$valor_apellidos."\"\n";
 	echo "<br>\n";
    //telefono
-	echo  "Telefono fijo:<br>\n";
+	echo  "<br/>Telefono fijo:<br>\n";
 	if($error_telefono)
 	{
 		echo "<input type=\"text\" name=\"telefono\">";
@@ -122,7 +122,7 @@ permisos("profesores","E",1);
 		echo "<input type=\"text\" name=\"telefono\" value=\"".$valor_telefono."\"\n";
 	echo "<br>\n";
 	//movil
-	echo  "Telefono movil:<br>\n";
+	echo  "<br/>Telefono movil:<br>\n";
 	if($error_movil)
 	{
 		echo "<input type=\"text\" name=\"movil\">";
@@ -133,7 +133,7 @@ permisos("profesores","E",1);
 	echo "<br>\n";
 	
 
-	echo  "Correo electronico:<br>\n";
+	echo  "<br/>Correo electronico:<br>\n";
 	if($error_email)
 	{
 		echo "<input type=\"text\" size=\"30\" name=\"email\">";
@@ -143,7 +143,7 @@ permisos("profesores","E",1);
 		echo "<input type=\"text\" size=\"30\" name=\"email\" value=\"".$valor_email."\"\n";
 	echo "<br>\n";
 	
-	echo  "Departamento:<br>\n";
+	echo  "<br/>Departamento:<br>\n";
 	
 	
 	combo("Departamentos","dep",1,2,$valor_dep);
