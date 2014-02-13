@@ -16,12 +16,6 @@ function add()
 
 ?>
 
-<html>
-  <head>
-    <title>Editor - IES Gonzalo Nazareno</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  </head>
-  <body>
     <form action="savedata.php?ir=<? echo $_SERVER["HTTP_REFERER"];?>" method="post">
 	<input type="hidden" name="id" value="<? echo $_GET["l"];?>">
 <table border=0>

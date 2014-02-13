@@ -70,7 +70,13 @@ if($_GET) $ti=$_GET["tipo"]; else $ti=$_POST["tipo"];
 		?>
 		<input type="submit" name="respuesta" value="Aceptar">
 		<input type="submit" name="respuesta" value="Volver">
-		<?echo "</form>";
+		<br/>
+		<h6>Se enviará un correo electrónico al tutor/a.</h6>
+		<?
+		$menu="citación";    
+	        include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/menu2.inc");
+		
+		echo "</form>";
 	}
 include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/footer.inc");
 

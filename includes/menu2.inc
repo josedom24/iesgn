@@ -27,6 +27,10 @@ tipo"]."&t=".$_GET["t"]."&t1=".$_GET["t1"]."\" id=\"primero\">Nuevo dato","A"),
 																		array("editor/index.php?l=6\" id=\"primero\">Editar citación","E")
 																		
 																	  ),"partes"),																	
+							"citación"=>array(array(
+																		array("editor/index.php?l=8\" id=\"primero\">Editar correo","E")
+																		
+																	  ),"partes"),																	
 							"historial"=>array(array(
 																		array("impresora/list.php?l=4&f=".$fich."\" id=\"primero\">Imprimir","V")
 																		
