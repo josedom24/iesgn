@@ -50,7 +50,7 @@ tipo"]."&t=".$_GET["t"]."&t1=".$_GET["t1"]."\" id=\"primero\">Nuevo dato","A"),
 							"profesores"=>array(array(
 																		array("profesores/listados.php\" id=\"primero\">Listados","V")
 																		
-																		),"profesores"),
+																		),"listadopr"),
 							"secretaria"=>array(array(
 																		array("registro/nuevoregistro.php?tipo=".$tipo."\" id=\"primero\">Nuevo","A"),
 																		array("impresora/list.php?l=9&f=".$fich."\" >Imprimir","V"),
