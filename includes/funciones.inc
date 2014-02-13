@@ -593,6 +593,11 @@ function tutoria($curso)
 	if($row=mysql_fetch_array($result)) return ($row);
 
 }
-
+function correo($l)
+{
+	$sql="select * from Cartas where Id=".$l;
+	$result=mysql_query($sql);
+	if($row=mysql_fetch_array($result)) return($row);
+}
 
 ?>

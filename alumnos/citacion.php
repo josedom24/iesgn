@@ -22,6 +22,8 @@ include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
 		
 			$sql="insert into Partes (Ida,Tipo,Fecha,Comentario,Id_prof) values (".$_POST["id"].",'c','".cambiaf_a_mysql($_POST["fecha"])."','".$_POST["comentario"]."',".$_POST["profe"].")";	
 			mysql_query($sql) or die("Error en SQL:".$sql."<br>".mysql_error($bd));	
+			//mail(tutoria($_POST["curso"])["Email"],"Nueva citación de alumno",correo(8)["Contenido"],"From: IES_Gonzalo_Nazareno");
+			mail("garriman3@yahoo.es","Nueva citación de alumno",cambia($_POST["id"],correo(8)["Contenido"],"Alumnos"),"From: IES_Gonzalo_Nazareno\r\nContent-Type: text/html; charset=utf-8");
 			header("Location:alumnos.php?uni=".$_POST["uni"]);
 			die("");
 		}
@@ -68,8 +70,9 @@ if($_GET) $ti=$_GET["tipo"]; else $ti=$_POST["tipo"];
 		echo "Porfesor:<br/>";
                 ComboProfe();          
 		?>
-		<input type="submit" name="respuesta" value="Aceptar">
-		<input type="submit" name="respuesta" value="Volver">
+		<input type="submit" name="respuesta" value="Aceptar"/>
+		<input type="submit" name="respuesta" value="Volver"/>
+		<input type="hidden" name="curso" value="<?echo $row["Unidad"];?>"/>
 		<br/>
 		<h6>Se enviará un correo electrónico al tutor/a.</h6>
 		<?
