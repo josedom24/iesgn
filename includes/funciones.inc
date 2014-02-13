@@ -602,7 +602,7 @@ function correo($l)
 function ProfesorAlumno($l)
 {
 
-$sql="select Profesores.Id from Profesores,Alumnos where Alumnos.Unidad=Profesores.Tutor and Alumnos.Unidad<>"" and Alumnos.id=".$l;
+$sql='select Profesores.Id from Profesores,Alumnos where Alumnos.Unidad=Profesores.Tutor and Alumnos.Unidad<>"" and Alumnos.id='.$l;
 	$result=mysql_query($sql);
 	if($row=mysql_fetch_array($result)) return($row);
 }
