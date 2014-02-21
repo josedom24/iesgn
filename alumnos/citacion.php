@@ -17,14 +17,10 @@ include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/funciones.inc");
 	
 	if($cont==0)
 	{	
-		
-		
-		
-			$sql="insert into Partes (Ida,Tipo,Fecha,Comentario,Id_prof) values (".$_POST["id"].",'c','".cambiaf_a_mysql($_POST["fecha"])."','".$_POST["comentario"]."',".$_POST["profe"].")";	
-			mysql_query($sql) or die("Error en SQL:".$sql."<br>".mysql_error($bd));	
-			//mail(tutoria($_POST["curso"])["Email"],"Nueva citación de alumno",correo(8)["Contenido"],"From: IES_Gonzalo_Nazareno");
-			if($_POST["envcorreo"]=="Y")
- 				mail("garriman3@yahoo.es","Nueva citación de alumno",cambia($_POST["id"],correo(8)["Contenido"],"Alumnos"),"From: IES_Gonzalo_Nazareno\r\nContent-Type: text/html; charset=utf-8");
+		$sql="insert into Partes (Ida,Tipo,Fecha,Comentario,Id_prof) values (".$_POST["id"].",'c','".cambiaf_a_mysql($_POST["fecha"])."','".$_POST["comentario"]."',".$_POST["profe"].")";	
+		mysql_query($sql) or die("Error en SQL:".$sql."<br>".mysql_error($bd));	
+		if($_POST["envcorreo"]=="Y")
+         	mail(tutoria($_POST["curso"])["Email"],"Nueva citación de alumno",cambia($_POST["id"],correo(8)["Contenido"],"Alumnos"),"From: IES_Gonzalo_Nazareno\r\nContent-Type: text/html; charset=utf-8");
 			header("Location:alumnos.php?uni=".$_POST["uni"]);
 			die("");
 		}
@@ -77,8 +73,8 @@ if($_GET) $ti=$_GET["tipo"]; else $ti=$_POST["tipo"];
 		<br/>
 		<input type="checkbox" name="envcorreo" value="Y" checked>Se enviará un correo electrónico al tutor/a.</br>
 		<?
-		if(tutoria($row["Unidad"])["Email"]=="")
-			echo'<br><b>Atención el tutor no tiene indicado el correo electrónico.</b>';
+		if(tutoria($row["Unidad"])["echo"]=="")
+			Email'<br><b>Atención el tutor no tiene indicado el correo electrónico.</b>';
 		$menu="citación";    
 	        include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/menu2.inc");
 		

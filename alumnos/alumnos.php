@@ -23,6 +23,8 @@ echo "<form name=\"f1\" action=\"alumnos.php\" method=\"post\">\n";
 
 
 echo "<br><center>";
+if ($_SESSION["perfil"]!="u")
+{
 echo "<select onchange=\"document.f1.submit();\" name=\"uni\" size=\"0\">";
 $sql2="select Unidad from Alumnos group by Unidad";
 $result2=mysql_query($sql2);
@@ -37,6 +39,16 @@ while($row=mysql_fetch_array($result2))
 		echo " value=\"".$row["Unidad"]."\">".$row["Unidad"]."</option>\n";
 }
 echo "</select>\n";
+}
+else
+{
+echo "<select onchange=\"document.f1.submit();\" name=\"uni\" size=\"0\">";
+echo "<option selected value=\""."hola"."\">"."1º BTO A"."</option>\n";
+echo "</select>\n";
+
+}
+
+
 //echo "<input type=\"submit\" value=\"Aceptar\">\n";
 echo "</form>";
 echo "</center>";
