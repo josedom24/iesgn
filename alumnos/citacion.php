@@ -74,7 +74,7 @@ if($_GET) $ti=$_GET["tipo"]; else $ti=$_POST["tipo"];
 		<input type="checkbox" name="envcorreo" value="Y" checked>Se enviará un correo electrónico al tutor/a.</br>
 		<?
 		if(tutoria($row["Unidad"])["echo"]=="")
-			Email'<br><b>Atención el tutor no tiene indicado el correo electrónico.</b>';
+			echo '<br><b>Atención el tutor no tiene indicado el correo electrónico.</b>';
 		$menu="citación";    
 	        include ($_SERVER["DOCUMENT_ROOT"]."/iesgn/includes/menu2.inc");
 		
