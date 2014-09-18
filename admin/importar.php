@@ -17,7 +17,7 @@
 			foreach ($lines as $line_num => $line)
 			{
 				$datos = explode("|", $line);
-				if(sizeof($datos)!=11)
+				if(sizeof($datos)!=13)
 			{
 					echo "Error, formato incorrecto.";
 					echo "<br><a href=\"../index.php\">Volver</a>";
