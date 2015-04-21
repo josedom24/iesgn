@@ -84,11 +84,11 @@ permisos("secretaria","A",1);
 	if($tipo=="e") echo "Procedencia:<br>"; else echo "Destino:<br>";
 	Combo("Procedencia","proc",1,1,"",0,"","Procedencia");
 	if($tipo=="e") echo "<br>Remitente:<br>"; else echo "<br>Destinatario:<br>";
-	Combo("Remitente","remi",0,1,"",0,"","Remitente");
+	Combo("Remitente","remi",1,1,"",0,"","Remitente");
 
 	#Combo("Remitente","remi",1);
 	echo "<br>Documento:<br>";
-	Combo("ClaseDocumento","clas",0,1,"",0,"","ClaseDocumento");
+	Combo("ClaseDocumento","clas",1,1,"",0,"","ClaseDocumento");
 
 	#Combo("ClaseDocumento","clas",1);
 	echo "<br>Contenido:<br><input type=\"text\" size=\"70\" name=\"cont\" value=\"".$_POST["cont"]."\"><br>";
